@@ -53,7 +53,7 @@ contract Leilao {
             3o  é o incrementador (ou decrementador) do indice
         */
         for (uint i=0; i<ofertantes.length; i++) {
-            Ofertante memory leiloeiroPerdedor = ofertantes[i];
+            Ofertante storage leiloeiroPerdedor = ofertantes[i];
             if (!leiloeiroPerdedor.jaFoiReembolsado) {
                 leiloeiroPerdedor.enderecoCarteira.transfer(leiloeiroPerdedor.oferta);
                 leiloeiroPerdedor.jaFoiReembolsado = true;
